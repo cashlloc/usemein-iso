@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source src/checks.sh
+source src/render_jinja2.sh
 
 CONFIG=config.yaml
 
@@ -15,9 +16,8 @@ arch=$(grep arch ./profiledef.sh | cut -d'"' -f 2)
 # Creates packages.$arch
 cat pkgs/* > packages.$arch
 
-# Sets root password to rootpw from config.yaml.
-# If left empty, password-less login is enabled for root
-jinja2 airootfs/etc/shadow.j2 $CONFIG -o airootfs/etc/shadow
+# Render jinja templates
+render_j2_tree . $CONFIG
 
 # Create ISO
 mkarchiso -v .
