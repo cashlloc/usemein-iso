@@ -22,6 +22,7 @@ file_permissions=(
   ["/root/.automated_script.sh"]="0:0:755"
   ["/root/.gnupg"]="0:0:700"
   ["/usr/local/bin/choose-mirror"]="0:0:755"
-  ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
+  ["/usr/share/pacman/keyrings/usemein-trusted"]="0:0:644"
+  ["/usr/share/pacman/keyrings/usemein.gpg"]="0:0:644"
 )
